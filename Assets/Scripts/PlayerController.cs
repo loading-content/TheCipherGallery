@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public GameObject PauseMenuUI;
+
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -20,7 +22,6 @@ public class PlayerController : MonoBehaviour
     float rotationX = 0;
 
     public bool canMove = true;
-
 
     CharacterController characterController;
     void Start()
@@ -43,6 +44,22 @@ public class PlayerController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        #endregion
+
+        #region Handles canMove During SettingsMenu
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (PauseMenuUI.activeInHierarchy)
+            {
+                Debug.Log("turned on ;)");
+                canMove = false;
+            }
+            else
+            {
+                canMove = true;
+            }
+        }
 
         #endregion
 
