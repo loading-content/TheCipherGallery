@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
+    public playerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
+                Debug.Log("turned on ;)");
             }
         }
     }
@@ -33,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        playerController.canMove = true;
     }
     private void Pause()
     {
@@ -40,5 +44,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0.5f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        playerController.canMove = false;
     }
 }
