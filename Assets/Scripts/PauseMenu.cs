@@ -6,7 +6,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
-    public playerController playerController;
+    public PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()

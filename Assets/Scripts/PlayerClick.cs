@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class PaintingClick : MonoBehaviour
+public class paintingClick : MonoBehaviour
 {
     public GameObject paintings;
     public List<GameObject> allPaintings = new List<GameObject>();
@@ -23,11 +23,18 @@ public class PaintingClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject clickedObject = getClickedObject(out RaycastHit hit);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            if (clickedObject != null && allPaintings.Contains(clickedObject))
+            if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log("gotcha");
+                PaintingInteractable interactable =
+                    hit.collider.GetComponent<PaintingInteractable>();
+
+                if (interactable != null)
+                {
+                    interactable.OnClick();
+                }
             }
         }
     }
