@@ -28,8 +28,7 @@ public class paintingClick : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                PaintingInteractable interactable =
-                    hit.collider.GetComponent<PaintingInteractable>();
+                PaintingInteractable interactable = hit.collider.GetComponentInParent<PaintingInteractable>();
 
                 if (interactable != null)
                 {
