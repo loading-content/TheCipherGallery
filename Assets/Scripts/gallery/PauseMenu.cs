@@ -7,20 +7,14 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
     public GameObject ControlsMenuUI;
+    public GameObject NotebookUI;
     public PlayerController playerController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            if (!PauseMenuUI.activeInHierarchy && !ControlsMenuUI.activeInHierarchy)
+            if (!PauseMenuUI.activeInHierarchy && !ControlsMenuUI.activeInHierarchy && !NotebookUI.activeInHierarchy)
             {
                 Pause();
                 Debug.Log("turned on ;)");
