@@ -11,15 +11,16 @@ public class AnswerChecker : MonoBehaviour
     public string answer;
 
     public GameObject answerInputUI;
-
     public void ValidateInput()
     {
+        Scene scene = SceneManager.GetActiveScene();
         string input = inputField.text;
 
         if (input == answer)
         {
             resultText.text = "yes, " + input;
             resultText.color = Color.green;
+            PlayerPrefs.SetInt(scene.name, 1);
         }
         else
         {
