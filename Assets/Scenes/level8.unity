@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e34133d9d926c6243a36d04382fd679b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ef22962286667a40a109cf2d4595983, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1428248852}
   resultText: {fileID: 442594639}
-  answer: out of time
+  answer: qwertyuiop
   answerInputUI: {fileID: 2001153836}
 --- !u!1 &1921643647
 GameObject:
