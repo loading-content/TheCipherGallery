@@ -43,8 +43,8 @@ public class PaintingInteractable : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            // SceneManager.LoadScene(sceneIndex);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneIndex);
+            // SceneManager.LoadScene(1);
         }
     }
 }

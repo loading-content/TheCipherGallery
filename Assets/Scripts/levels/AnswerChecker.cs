@@ -13,19 +13,13 @@ public class AnswerChecker : MonoBehaviour
     public GameObject answerInputUI;
     public void ValidateInput()
     {
-        Scene scene = SceneManager.GetActiveScene();
         string input = inputField.text;
-
         if (input == answer)
         {
+            Scene scene = SceneManager.GetActiveScene();
             resultText.text = "yes, " + input;
             resultText.color = Color.green;
             PlayerPrefs.SetInt(scene.name, 1);
-        }
-        else
-        {
-            resultText.text = "hmm nope";
-            resultText.color = Color.red;
         }
 
     }
